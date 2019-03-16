@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Table Products List</title>
+
+    <style type="text/css">
+        body {
+            background: url("http://2.bp.blogspot.com/-wLMOBmu1CrE/UYHKPClDK4I/AAAAAAAAt-w/kmUWhHJ_ECk/s1600/Health+HD+Wallpaper+(5).jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: green;
+        }
+        .menu {
+            width: 200px;
+            /*background-color: green;*/
+            margin-top: 20px;
+            color: white;
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Produkt</th>
+        <th scope="col">Cena</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product: ${productsList}" >
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+    <div class="container">
+    <span>Suma wszystkich produktów  </span><span th:text="${suma}"></span>
+    </div>
+<div class="menu">
+    <form action="/homepage">
+        <button type="submit" class="btn btn-primary mb-2">Wroć do strony głównej</button>
+    </form>
+</div>
+</body>
+</html>
