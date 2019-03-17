@@ -48,10 +48,10 @@
 <div class="container">
     <div id="logo"> Dodawanie produktów</div>
     <div id="form">
-        <form action="/homepage" method="post" th:object="${newProduct}">
+        <form action="/" method="post" th:object="${newProduct}">
             <input type="text" th:field="*{name}"/>
             <input type="number" th:field="*{price}"/><br>
-            <div class="menu"><input class="btn btn-primary" type="submit" value="Add"/></div>
+            <div class="menu"><input class="btn btn-primary" type="submit" /></div>
         </form>
     </div>
     <div class="menu">

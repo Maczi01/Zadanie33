@@ -42,17 +42,17 @@ public class ProductController {
         return sum;
     }
 
-    @GetMapping("/homepage")
+    @GetMapping("/")
     public String formPage(Model model) {
         model.addAttribute("productsList", productsList);
         model.addAttribute("newProduct", new Product());
         return "homepage";
     }
 
-    @PostMapping("/homepage")
+    @PostMapping("/")
     public String add(Product product) {
         productsList.add(product);
-        return "redirect:/homepage";
+        return "redirect:/";
     }
 
     @GetMapping("/listpage")
@@ -70,5 +70,4 @@ public class ProductController {
         model.addAttribute("suma", printSum());
         return "tablepage";
     }
-
 }
